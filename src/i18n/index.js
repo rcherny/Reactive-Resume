@@ -1,8 +1,5 @@
 import i18n from 'i18next';
-import backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
-import detector from 'i18next-browser-languagedetector';
-
 import resources from './locales';
 
 const languages = [
@@ -12,7 +9,7 @@ const languages = [
   },
   {
     code: 'zh',
-    name: 'Chinese (中文)',
+    name: 'Chinese Simplified (简体中文)',
   },
   {
     code: 'da',
@@ -27,6 +24,10 @@ const languages = [
     name: 'English (US)',
   },
   {
+    code: 'fi',
+    name: 'Finnish (Suomalainen)',
+  },
+  {
     code: 'fr',
     name: 'French (Français)',
   },
@@ -35,46 +36,40 @@ const languages = [
     name: 'German (Deutsche)',
   },
   {
-    code: 'hi',
-    name: 'Hindi (हिन्दी)',
+    code: 'ja',
+    name: 'Japanese (日本人)',
   },
   {
     code: 'kn',
     name: 'Kannada (ಕನ್ನಡ)',
   },
   {
-    code: 'pl',
-    name: 'Polish (Polskie)',
+    code: 'nb',
+    name: 'Norwegian (Norsk)',
   },
   {
-    code: 'pt',
-    name: 'Portuguese (Português)',
+    code: 'ptBr',
+    name: 'Portuguese (Brazilian)',
+  },
+  {
+    code: 'ptPt',
+    name: 'Portuguese (Portugal)',
   },
   {
     code: 'es',
     name: 'Spanish (Español)',
   },
   {
-    code: 'ta',
-    name: 'Tamil (தமிழ்)',
-  },
-  {
-    code: 'vi',
-    name: 'Vietnamese (Tiếng Việt)',
+    code: 'tr',
+    name: 'Turkish (Türkçe)',
   },
 ];
 
-i18n
-  .use(detector)
-  .use(backend)
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en',
-    fallbackLng: 'en',
-    ns: ['app', 'leftSidebar', 'rightSidebar'],
-    defaultNS: 'app',
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'en',
+  fallbackLng: 'en',
+});
 
 export { languages };
 
